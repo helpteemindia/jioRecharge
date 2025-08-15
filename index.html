@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jio Recharge</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: #000;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 8px 0 4px 0;
+    }
+    p {
+        font-size: 14px;
+        color: #555;
+        margin-top: 0;
+    }
+
+    .toggle {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+        background-color: #f1f1f1;
+        border-radius: 25px;
+        overflow: hidden;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .toggle button {
+        padding: 10px 20px;
+        border: none;
+        background: none;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+    }
+    .toggle button.active {
+        background-color: #0f3cc9;
+        color: white;
+    }
+
+    .input-group {
+        max-width: 300px;
+        margin: auto;
+        margin-top: 10px;
+        text-align: left;
+    }
+    .input-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .input-group input {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        padding: 8px;
+        font-size: 16px;
+        outline: none;
+    }
+    .input-group input:focus {
+        border-color: #0f3cc9;
+    }
+
+    .btn {
+        display: block;
+        width: 90%;
+        max-width: 320px;
+        margin: 30px auto;
+        padding: 12px;
+        background-color: #0f3cc9;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+    .btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="jio.png" alt="Jio Logo">
+    </div>
+
+    <h2>Mobile Recharge</h2>
+    <p>Enter your details to find the best prepaid plans.</p>
+
+    <div class="toggle">
+        <button id="mobileBtn" class="active">Mobile</button>
+        <button id="fiberBtn">JioHome</button>
+    </div>
+
+    <div class="input-group">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="tel" id="mobileNumber" placeholder="Enter mobile number" maxlength="10" pattern="[0-9]*">
+    </div>
+
+    <button class="btn" id="continueBtn" disabled>Continue</button>
+
+</div>
+
+<script>
+    const mobileBtn = document.getElementById("mobileBtn");
+    const fiberBtn = document.getElementById("fiberBtn");
+    const mobileNumber = document.getElementById("mobileNumber");
+    const continueBtn = document.getElementById("continueBtn");
+
+    // Toggle buttons
+    mobileBtn.addEventListener("click", () => {
+        mobileBtn.classList.add("active");
+        fiberBtn.classList.remove("active");
+    });
+    fiberBtn.addEventListener("click", () => {
+        fiberBtn.classList.add("active");
+        mobileBtn.classList.remove("active");
+    });
+
+    // Mobile number validation
+    mobileNumber.addEventListener("input", () => {
+        let value = mobileNumber.value.replace(/\D/g, ""); 
+        mobileNumber.value = value.slice(0, 10); 
+
+        // Must start with 9, 8, 7, or 6 and be exactly 10 digits
+        const isValid = /^[9876]\d{9}$/.test(mobileNumber.value);
+        continueBtn.disabled = !isValid;
+    });
+
+    // Redirect to next page with number
+    continueBtn.addEventListener("click", () => {
+        window.location.href = `list.html?number=${mobileNumber.value}`;
+    });
+</script>
+
+</body>
+</html>

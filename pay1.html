@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPI QR — aloneashish262@okaxis</title>
+  <style>
+    html,body{height:100%}
+    body{margin:0;display:grid;place-items:center;background:#0f172a}
+    .qr{background:#ffffff;border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    #fallback{color:#fff;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin-top:12px;text-align:center}
+  </style>
+</head>
+<body>
+  <div>
+    <div class="qr" id="qrcode"></div>
+    <div id="fallback" hidden>
+      QR library failed to load. Connect to internet or host the file; then reload.
+    </div>
+  </div>
+
+  <!-- QRCode library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" onerror="document.getElementById('fallback').hidden=false"></script>
+  <script>
+    (function(){
+      const el = document.getElementById('qrcode');
+      const upi = 'upi://pay?pa=aloneashish262@okaxis&cu=INR';
+      function makeQR(){
+        el.innerHTML='';
+        QRCode.toCanvas(upi, { width: 360, margin: 2, errorCorrectionLevel:'M' }, function(err, canvas){
+          if(err){ console.error(err); return; }
+          canvas.style.display='block';
+          canvas.style.borderRadius='12px';
+          // solid white background to scan well
+          const ctx = canvas.getContext('2d');
+          const imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
+          // (already white by lib), just append
+          el.appendChild(canvas);
+        });
+      }
+      if(window.QRCode){ makeQR(); }
+      else {
+        // if script loads a bit later
+        window.addEventListener('load', () => { if(window.QRCode) makeQR(); });
+      }
+    })();
+  </script>
+</body>
+</html>

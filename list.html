@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recharge Plans</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #fff;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    header img {
+        height: 35px;
+        margin-right: 10px;
+    }
+    header h1 {
+        font-size: 16px;
+        margin: 0;
+        font-weight: normal;
+    }
+    header a {
+        color: #0f3cc9;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .plans-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .plan {
+        background: white;
+        border-radius: 12px;
+        padding: 15px;
+        margin: 10px 0;
+        width: 95%;
+        max-width: 400px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .special-tag {
+        display: inline-block;
+        background: #13294b;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    .price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+    }
+    .old-price {
+        text-decoration: line-through;
+        color: #777;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    .highlight {
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .details {
+        font-size: 14px;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+    .subscriptions {
+        margin-top: 8px;
+    }
+    .subscriptions img {
+        height: 28px;
+        margin-right: 5px;
+        border-radius: 4px;
+    }
+    .buy-btn {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+        padding: 10px;
+        background: #0f3cc9;
+        color: #fff;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="jio.png" alt="Jio Logo">
+    <div>
+        <h1>Recharging for <span id="userNumber"></span></h1>
+        <a href="index.html">Change number</a>
+    </div>
+</header>
+
+<div class="plans-container">
+
+    <!-- PLAN 1 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹699</span>
+            <span class="old-price">₹2499</span>
+        </div>
+        <div class="highlight">UNLIMITED TRUE 5G DATA</div>
+        <div class="details">
+            VALIDITY: 12 month<br>
+            DATA: 2 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future2.jpg" alt="Subscriptions">
+        </div>
+        <a href="699.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+    <!-- PLAN 2 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹999</span>
+            <span class="old-price">₹3999</span>
+        </div>
+        <div class="highlight">UNLIMITED TRUE 5G DATA</div>
+        <div class="details">
+            VALIDITY: 12 month<br>
+            DATA: 3 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future3.jpg" alt="Subscriptions">
+        </div>
+        <a href="999.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+    <!-- PLAN 3 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹499</span>
+            <span class="old-price">₹1999</span>
+        </div>
+        <div class="highlight">UNLIMITED TRUE 5G DATA</div>
+        <div class="details">
+            VALIDITY: 2 month<br>
+            DATA: 1.5 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future1.jpg" alt="Subscriptions">
+        </div>
+        <a href="499.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+    <!-- PLAN 4 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹299</span>
+            <span class="old-price">₹1499</span>
+        </div>
+        <div class="highlight">UNLIMITED TRUE 5G DATA</div>
+        <div class="details">
+            VALIDITY: 84 Days<br>
+            DATA: 1.5 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future1.jpg" alt="Subscriptions">
+        </div>
+        <a href="299.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+    <!-- PLAN 5 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹149</span>
+            <span class="old-price">₹616</span>
+        </div>
+        <div class="details">
+            VALIDITY: 84 days<br>
+            DATA: 1.5 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future1.jpg" alt="Subscriptions">
+        </div>
+        <a href="149.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+    <!-- PLAN 6 -->
+    <div class="plan">
+        <span class="special-tag">SPECIAL</span>
+        <div>
+            <span class="price">₹199</span>
+            <span class="old-price">₹349</span>
+        </div>
+        <div class="highlight">UNLIMITED TRUE 5G DATA</div>
+        <div class="details">
+            VALIDITY: 28 Days <br>
+            DATA: 1.5 GB/day<br>
+            Voice: Unlimited<br>
+            SMS: 100/day
+        </div>
+        <div class="subscriptions">
+            <img src="future1.jpg" alt="Subscriptions">
+        </div>
+        <a href="199.jpg" target="_blank" class="buy-btn">Recharge</a>
+    </div>
+
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const number = params.get("number");
+    document.getElementById("userNumber").textContent = number || "Unknown";
+</script>
+
+</body>
+</html>
